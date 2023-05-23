@@ -6,7 +6,6 @@
    object-fit: cover;
    overflow: hidden;
    position: fixed;
-   filter:grayscale();
 }
 
 .child { 
@@ -15,4 +14,10 @@
 
 .bg-custom-dark {
     background-color: #343a40;
+}
+
+.custom-title {
+    font-size: 80px;
+    color: white;
+    
 }
