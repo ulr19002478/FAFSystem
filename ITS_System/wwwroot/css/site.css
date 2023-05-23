@@ -12,6 +12,19 @@
     padding-top: 25vh;
 }
 
+body.custom-page {
+    background-image: url("./images/background.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("./images/background.jpg");
+    background-size: cover;
+    background-position: center;
+}
 
 
 .bg-custom-dark {
@@ -26,32 +39,43 @@
     
 }
 
+.custom-title2 {
+    font-size: 50px;
+    color: black;
+    font-weight: 200;
+}
+
 .heading-container {
     text-align: center;
     margin-bottom: 20px;
 }
 
-    .heading-container h1 {
+.heading-container h1 {
         position: relative;
         display: inline-block;
         padding: 0 20px;
-    }
+    }    
 
-        .heading-container h1:before,
+.heading-container h1:before,
         .heading-container h1:after {
             content: "";
             position: absolute;
             top: 50%;
             width: 60%;
             border-top: 5px solid white;
-        }
+        }        
 
-        .heading-container h1:before {
+.heading-container h1:before {
             right: 100%;
             margin-right: 20px;
-        }
+        }        
 
-        .heading-container h1:after {
+ .heading-container h1:after {
             left: 100%;
             margin-left: 20px;
-        }
+        }       
+
+body {
+    background-color: #CCCCCC;
+}
+
