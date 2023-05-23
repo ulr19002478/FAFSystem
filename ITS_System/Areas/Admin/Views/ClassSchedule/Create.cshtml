@@ -1,0 +1,62 @@
+﻿@model ITS_System.Models.ClassSchedule
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Class Schedule</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-12 col-lg-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mt-2">
+                <label asp-for="DateTime" class="control-label"></label>
+                <input asp-for="DateTime" class="form-control" />
+                <span asp-validation-for="DateTime" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="InstructorId" class="control-label"></label>
+                <select asp-for="InstructorId" class="form-control form-select" asp-items="ViewBag.InstructorId"></select>
+                <span asp-validation-for="InstructorId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-2">
+                <label asp-for="MaxNumbersOfBooking" class="control-label"></label>
+                <input asp-for="MaxNumbersOfBooking" class="form-control" min="1" type="number" />
+                <span asp-validation-for="MaxNumbersOfBooking" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <label asp-for="RoomId" class="control-label"></label>
+                <select asp-for="RoomId" class="form-control form-select" asp-items="ViewBag.RoomId"></select>
+            </div>
+            <div class="form-group mt-2">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" class="form-control form-select" asp-items="Html.GetEnumSelectList<ITS_System.Models.Enums.ClassStatus>()"></select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <label for="EquipmentList" class="control-label">Equipment List</label>
+                <select id="EquipmentList" class="form-control form-select" multiple asp-items="ViewBag.EquipmentList" name="EquipmentList"></select>
+            </div>
+
+            <div class="form-group mt-2 ">
+                <input type="submit" value="Create" class="btn btn-primary w-100" />
+            </div>
+            <div class="form-group mt-2 ">
+                <a asp-action="Index" class="btn btn-dark w-100">Back to Classes</a>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

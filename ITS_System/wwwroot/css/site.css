@@ -1,0 +1,18 @@
+
+#background-image {
+   z-index: -100;
+   height: 100vh;
+   width: 100vw;
+   object-fit: cover;
+   overflow: hidden;
+   position: fixed;
+   filter:grayscale();
+}
+
+.child { 
+    padding-top: 25vh;
+}
+
+.bg-custom-dark {
+    background-color: #343a40;
+}

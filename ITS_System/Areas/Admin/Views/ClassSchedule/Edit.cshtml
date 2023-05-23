@@ -1,0 +1,80 @@
+﻿@model ITS_System.Models.ClassSchedule
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Class Schedule</h1>
+<hr />
+<div class="row">
+    <form asp-action="Edit">
+        <div class="col">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="DateTime" class="control-label"></label>
+                <input asp-for="DateTime" class="form-control" />
+                <span asp-validation-for="DateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InstructorId" class="control-label"></label>
+                <select asp-for="InstructorId" class="form-control form-select" asp-items="ViewBag.InstructorId"></select>
+                <span asp-validation-for="InstructorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxNumbersOfBooking" class="control-label"></label>
+                <input asp-for="MaxNumbersOfBooking" class="form-control" type="number" min="0" />
+                <span asp-validation-for="MaxNumbersOfBooking" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoomId" class="control-label"></label>
+                <select asp-for="RoomId" class="form-control form-select" asp-items="ViewBag.RoomId"></select>
+                <span asp-validation-for="RoomId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" class="form-control form-select" asp-items="Html.GetEnumSelectList<ITS_System.Models.Enums.ClassStatus>()"></select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="EquipmentList" class="control-label">Equipment List</label>
+                <select class="form-control form-select" multiple name="EquipmentList">
+                    @foreach (var item in ViewBag.EquipmentList as SelectList)
+                    {
+                        <option value="@item.Value" selected="@Model.EquipmentList.Any(e => e.Equipment.Id.ToString() == item.Value)">@item.Text</option>
+                    }
+                </select>
+                <span asp-validation-for="EquipmentList" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="WaitingList" class="control-label">Waiting List</label>
+
+                <select class="form-control form-select" multiple name="WaitingList">
+                    @foreach (var item in ViewBag.WaitingList as SelectList)
+                    {
+                        <option value="@item.Value" selected="@Model.WaitingList.Any(w => w.Customer.Id == item.Value)">@item.Text</option>
+                    }
+                </select>
+                <span asp-validation-for="WaitingList" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary mt-2 w-100" />
+            </div>
+        </div>
+
+    </form>
+    
+        <div>
+            <a asp-action="Index" class="btn btn-dark w-100 mt-2">Back to List</a>
+        </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

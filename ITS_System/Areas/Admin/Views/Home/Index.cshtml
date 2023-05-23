@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Admin Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Admin Home</h1>
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <a href="@Url.Action("Index", "RolesManager", new { area = "Admin" })" class="card text-decoration-none text-center">
+                    <div class="card-body bg-primary" style="height: 200px;">
+                        <h5 class="card-title text-dark" style="font-size: 24px; line-height: 150px;">Manage Roles</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <a href="@Url.Action("Index", "UserRolesManager", new { area = "Admin" })" class="card text-decoration-none text-center">
+                    <div class="card-body bg-secondary" style="height: 200px;">
+                        <h5 class="card-title text-dark" style="font-size: 24px; line-height: 150px;">Manage Users</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <a href="@Url.Action("Index", "Room", new { area = "Admin" })" class="card text-decoration-none text-center">
+                    <div class="card-body bg-info" style="height: 200px;">
+                        <h5 class="card-title text-dark" style="font-size: 24px; line-height: 150px;">Manage Rooms</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <a href="@Url.Action("Index", "Equipment", new { area = "Admin" })" class="card text-decoration-none text-center">
+                    <div class="card-body bg-success" style="height: 200px;">
+                        <h5 class="card-title text-dark" style="font-size: 24px; line-height: 150px;">Manage Equipment</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <a href="@Url.Action("Index", "ClassSchedule", new { area = "Admin" })" class="card text-decoration-none text-center">
+                    <div class="card-body bg-warning" style="height: 200px;">
+                        <h5 class="card-title text-dark" style="font-size: 24px; line-height: 150px;">Manage Classes</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
