@@ -12,5 +12,7 @@ namespace FlexAppealFitness.Areas.Customer.Controllers
         {
             return View();
         }
+
+        
     }
 }

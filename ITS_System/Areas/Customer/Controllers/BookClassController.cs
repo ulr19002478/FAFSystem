@@ -266,5 +266,12 @@ namespace FlexAppealFitness.Areas.Admin
         {
             return (_context.Schedule?.Any(e => e.Id == id)).GetValueOrDefault();
         }
+
+        [Area("Customer")]
+        [Authorize(Roles = "Customer")]
+        public IActionResult Joined()
+        {
+            return View();
+        }
     }
 }

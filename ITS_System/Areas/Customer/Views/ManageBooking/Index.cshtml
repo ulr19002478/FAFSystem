@@ -28,7 +28,7 @@
                     <strong>Status:</strong> @Html.DisplayFor(modelItem => item.Status)
                 </p>
                 <div class="d-flex justify-content-between">
-                    <a asp-action="Joined" class="btn btn-success w-100 mx-2">Join</a>
+                    <a class="btn btn-danger w-100 mx-2" asp-controller="Home" asp-action="Index">Leave Class</a>
                     <a class="btn btn-info w-100 mx-2" asp-action="Details" asp-route-id="@item.Id">Details</a>
                 </div>
             </div>
