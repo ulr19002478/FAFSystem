@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Class Schedules</h1>
+<h1>Book a Class</h1>
 
 <form asp-action="Index" method="get">
     <div class="input-group mb-3">
@@ -18,18 +18,20 @@
 <div class="d-flex flex-wrap justify-content-between">
     @foreach (var item in Model)
     {
-        <div class="card mb-4">
-            <div class="card-body">
-                <h5 class="card-title">@Html.DisplayFor(modelItem => item.DateTime)</h5>
-                <p class="card-text">
-                    <strong>Instructor:</strong> @Html.DisplayFor(modelItem => item.Instructor.Email) <br />
-                    <strong>Max Booking:</strong> @Html.DisplayFor(modelItem => item.MaxNumbersOfBooking) <br />
-                    <strong>Room:</strong> @Html.DisplayFor(modelItem => item.Room.Name) <br />
-                    <strong>Status:</strong> @Html.DisplayFor(modelItem => item.Status)
-                </p>
-                <div class="d-flex justify-content-between">
-                    <a asp-action="Joined" class="btn btn-success w-100 mx-2">Join</a>
-                    <a class="btn btn-info w-100 mx-2" asp-action="Details" asp-route-id="@item.Id">Details</a>
+        <div class="col-md-6 p-2">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.DateTime)</h5>
+                    <p class="card-text">
+                        <strong>Instructor:</strong> @Html.DisplayFor(modelItem => item.Instructor.Email) <br />
+                        <strong>Max Booking:</strong> @Html.DisplayFor(modelItem => item.MaxNumbersOfBooking) <br />
+                        <strong>Room:</strong> @Html.DisplayFor(modelItem => item.Room.Name) <br />
+                        <strong>Status:</strong> @Html.DisplayFor(modelItem => item.Status)
+                    </p>
+                    <div class="d-flex justify-content-between">
+                        <a asp-action="Joined" class="btn btn-success w-100 mx-2">Join</a>
+                        <a class="btn btn-info w-100 mx-2" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    </div>
                 </div>
             </div>
         </div>
